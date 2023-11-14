@@ -1,90 +1,127 @@
-import React, { useState } from 'react';
-import { Table, Button } from 'antd';
+import React, { useState } from "react";
+import { Button } from "antd";
 
-import AceEditor from 'react-ace';
-import 'ace-builds/src-noconflict/mode-sql';
-import 'ace-builds/src-noconflict/theme-github';
+import AceEditor from "react-ace";
+import "ace-builds/src-noconflict/mode-sql";
+import "ace-builds/src-noconflict/theme-github";
 
 const Practice = () => {
-
-
-
-  const columns = [
-    {
-      title: 'Name',
-      dataIndex: 'name',
-      key: 'name',
-    },
-    {
-      title: 'Age',
-      dataIndex: 'age',
-      key: 'age',
-    },
-    {
-      title: 'Address',
-      dataIndex: 'address',
-      key: 'address',
-    },
-  ];
-  
-  const data = [
-    {
-      key: '1',
-      name: 'John Brown',
-      age: 32,
-      address: 'New York No. 1 Lake Park',
-    },
-    {
-      key: '2',
-      name: 'Jim Green',
-      age: 42,
-      address: 'London No. 1 Lake Park',
-    },
-    {
-      key: '3',
-      name: 'Joe Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
-    },
-  ];
-  
-  const [code, setCode] = useState('');
+  const [code, setCode] = useState("");
+  const [show,setShow]=useState("");
 
   const handleCodeChange = (value) => {
     setCode(value);
   };
 
   const handleRunCode = () => {
+    setShow("")
     // Handle the execution of the SQL code here
-    console.log('Executing SQL code:', code);
+    console.log("Executing SQL code:", code);
+  };
+  const handleShowCode = () => {
+    setShow(code)
+    // Handle the execution of the SQL code here
+    console.log("Executing SQL code:", code);
   };
 
 
   return (
-    <div className='practice_container' >
-      <div className='question'>
+    <div className="practice_container">
+      <div className="question">
         <ul>
-          <li> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus nobis hic architecto temporibus iusto culpa consectetur non sint magni est.</li>
-          <li> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus nobis hic architecto temporibus iusto culpa consectetur non sint magni est.</li>
-          <li> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus nobis hic architecto temporibus iusto culpa consectetur non sint magni est.</li>
-          <li> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus nobis hic architecto temporibus iusto culpa consectetur non sint magni est.</li>
-          <li> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus nobis hic architecto temporibus iusto culpa consectetur non sint magni est.</li>
-          <li> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus nobis hic architecto temporibus iusto culpa consectetur non sint magni est.</li>
-          <li> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus nobis hic architecto temporibus iusto culpa consectetur non sint magni est.</li>
-          <li> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus nobis hic architecto temporibus iusto culpa consectetur non sint magni est.</li>
-          <li> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus nobis hic architecto temporibus iusto culpa consectetur non sint magni est.</li>
-          <li> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus nobis hic architecto temporibus iusto culpa consectetur non sint magni est.</li>
-          <li> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus nobis hic architecto temporibus iusto culpa consectetur non sint magni est.</li>
-          <li> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus nobis hic architecto temporibus iusto culpa consectetur non sint magni est.</li>
-          <li> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus nobis hic architecto temporibus iusto culpa consectetur non sint magni est.</li>
-          <li> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus nobis hic architecto temporibus iusto culpa consectetur non sint magni est.</li>
-          <li> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus nobis hic architecto temporibus iusto culpa consectetur non sint magni est.</li>
+          <li>
+            {" "}
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Necessitatibus nobis hic architecto temporibus iusto culpa
+            consectetur non sint magni est.
+          </li>
+          <li>
+            {" "}
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Necessitatibus nobis hic architecto temporibus iusto culpa
+            consectetur non sint magni est.
+          </li>
+          <li>
+            {" "}
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Necessitatibus nobis hic architecto temporibus iusto culpa
+            consectetur non sint magni est.
+          </li>
+          <li>
+            {" "}
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Necessitatibus nobis hic architecto temporibus iusto culpa
+            consectetur non sint magni est.
+          </li>
+          <li>
+            {" "}
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Necessitatibus nobis hic architecto temporibus iusto culpa
+            consectetur non sint magni est.
+          </li>
+          <li>
+            {" "}
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Necessitatibus nobis hic architecto temporibus iusto culpa
+            consectetur non sint magni est.
+          </li>
+          <li>
+            {" "}
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Necessitatibus nobis hic architecto temporibus iusto culpa
+            consectetur non sint magni est.
+          </li>
+          <li>
+            {" "}
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Necessitatibus nobis hic architecto temporibus iusto culpa
+            consectetur non sint magni est.
+          </li>
+          <li>
+            {" "}
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Necessitatibus nobis hic architecto temporibus iusto culpa
+            consectetur non sint magni est.
+          </li>
+          <li>
+            {" "}
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Necessitatibus nobis hic architecto temporibus iusto culpa
+            consectetur non sint magni est.
+          </li>
+          <li>
+            {" "}
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Necessitatibus nobis hic architecto temporibus iusto culpa
+            consectetur non sint magni est.
+          </li>
+          <li>
+            {" "}
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Necessitatibus nobis hic architecto temporibus iusto culpa
+            consectetur non sint magni est.
+          </li>
+          <li>
+            {" "}
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Necessitatibus nobis hic architecto temporibus iusto culpa
+            consectetur non sint magni est.
+          </li>
+          <li>
+            {" "}
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Necessitatibus nobis hic architecto temporibus iusto culpa
+            consectetur non sint magni est.
+          </li>
+          <li>
+            {" "}
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Necessitatibus nobis hic architecto temporibus iusto culpa
+            consectetur non sint magni est.
+          </li>
         </ul>
-
       </div>
-      <div className='answer'>
-
-
+      <div className="answer">
         <AceEditor
           mode="sql"
           theme="github"
@@ -93,17 +130,23 @@ const Practice = () => {
           value={code}
           editorProps={{ $blockScrolling: true }}
           setOptions={{ useWorker: false }}
-          style={{ width: '100%', height: '400px' }}
+          style={{ width: "100%", height: "400px" }}
         />
-        <Button type='primary' onClick={handleRunCode}>Run SQL Code</Button>
-        <Table columns={columns} dataSource={data} />
-
+        <Button type="primary" onClick={handleRunCode}>
+          Run SQL Code
+        </Button>
+        <Button type="primary"  style={{ marginLeft: '100px' }} onClick={handleShowCode}>
+          Show answer
+        </Button>
+        <br />
+        <input
+          type="text"
+          value={show}
+          style={{ width: "100%", height: "200px", marginTop: "20px" }} // Thiết lập chiều rộng là 300px và chiều cao là 50px
+        />
       </div>
-
-
-
     </div>
   );
-}
+};
 
 export default Practice;
